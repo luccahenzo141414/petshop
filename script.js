@@ -37,15 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question?.addEventListener('click', () => {
-      faqItems.forEach(other => {
-        if (other !== item) other.classList.remove('active');
-      });
-      item.classList.toggle('active');
-    });
+  document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+
+  btn.addEventListener('click', () => {
+    item.classList.toggle('active');
+
+    if (item.classList.contains('active')) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.style.maxHeight = null;
+    }
   });
+});
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

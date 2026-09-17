@@ -319,13 +319,23 @@ button {
   background: #fff;
 }
 
-.hero-card {
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.hero-video-wrap {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  overflow: hidden;
   box-shadow: var(--shadow-md);
-  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  min-height: 420px;
+}
+
+.hero-video {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-logo {
@@ -637,12 +647,16 @@ section {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.35s ease;
 }
 
 .faq-answer p {
   padding: 0 1.5rem 1.4rem;
   color: var(--cor-texto-claro);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
 }
 
 .faq-item.active .faq-icon {
